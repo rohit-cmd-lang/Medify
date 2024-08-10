@@ -1,0 +1,69 @@
+.consultation {
+  background: linear-gradient(
+    81deg,
+    #e7f0ff 9.01%,
+    rgba(232, 241, 255, 0.47) 89.11%
+  );
+  height: 598px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.consultation-container {
+  width: 81.25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.consultation-images {
+  width: 50%;
+}
+
+.consultation-content {
+  width: 50%;
+}
+
+.consultation-heading {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 27px;
+  color: var(--primary-color);
+}
+.consultation-subheading {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 67px;
+  margin-bottom: 2rem;
+}
+
+.consultation-subheading span {
+  color: var(--primary-color);
+}
+
+.consultation-para {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 29px;
+  color: #77829d;
+  margin-bottom: 2rem;
+}
+
+.consultation-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: -0.75rem;
+  margin-bottom: 1rem;
+}
+.consultation-feature p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+
+  color: #1b3c74;
+}

@@ -1,0 +1,39 @@
+.slide {
+  width: 348px;
+  height: 530px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.slide-img {
+  background: linear-gradient(144.2deg, #e1f3ff 0%, #2aa7ff 100%);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  overflow: hidden;
+  border: 8px solid white;
+  box-shadow: 0px 15px 55px -10px #00000017;
+}
+.slide-img > img {
+  transform: translateY(20px);
+}
+.slide-name {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: center;
+  color: #1b3c74;
+}
+.slide-specialisation {
+  color: var(--primary-color);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: center;
+}
+.doctors-carousel {
+  height: 819px;
+}

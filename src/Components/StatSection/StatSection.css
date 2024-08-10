@@ -1,0 +1,43 @@
+.stat-section {
+  background: linear-gradient(
+    81deg,
+    #e7f0ff 9.01%,
+    rgba(232, 241, 255, 0.47) 89.11%
+  );
+  height: 789px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stat-section-container {
+  width: 82.25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stat-section-content {
+  width: 50%;
+}
+.stat-section-content h3 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-section-content h1 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 67px;
+  color: #1b3c74;
+  margin-bottom: 1rem;
+}
+
+.stat-section-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 40.8px;
+  color: #77829d;
+}

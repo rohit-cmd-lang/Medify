@@ -1,0 +1,87 @@
+.wrapper-searchComponent {
+  width: 81.25%;
+  margin: 0 auto;
+  position: absolute;
+  top: 550px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 6px 6px 35px 0px #1028511c;
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  height: 429px;
+  z-index: 10;
+  background: white;
+}
+
+.wrapper-searchBox {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8rem;
+}
+.searchBox {
+  display: flex;
+  padding: 0.5rem;
+  width: 285px;
+  height: 50;
+  border: 1px solid #f0f0f0;
+  background: #f0f0f0;
+  border-radius: 0.5rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: #f0f0f0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+img {
+  padding: 0.75rem;
+}
+.wrapper-searchInputs {
+  display: flex;
+  align-self: flex-end;
+  gap: 3rem;
+}
+
+.button-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  height: 50px;
+  padding: 8px 20px 8px 8px;
+}
+
+.wrapper-card {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 203px;
+  height: 153px;
+  background: #fafbfe;
+  color: #abb6c7;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.active {
+  border: var(--primary-color) 2px solid;
+  background-color: #2aa7ff14;
+}
+
+.card img {
+  width: 90px;
+  height: 90px;
+}

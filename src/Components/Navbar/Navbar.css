@@ -1,0 +1,45 @@
+.navbar-wrapper {
+  /* change this later */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 81.25%;
+  margin: 0 auto;
+  height: 96px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.nav-links p {
+  cursor: pointer;
+}
+
+.booking-button {
+  background-color: var(--primary-color);
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  /* padding: 0.6rem 1.5rem; */
+  width: 130px;
+  height: 40px;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.linear-background {
+  width: 100%;
+  background: linear-gradient(
+    81deg,
+    #e7f0ff 9.01%,
+    rgba(232, 241, 255, 0.47) 89.11%
+  );
+}
