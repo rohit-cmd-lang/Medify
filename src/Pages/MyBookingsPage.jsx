@@ -4,6 +4,8 @@ import SearchBar from "../Components/SearchBar/SearchBar";
 import BookingCard from "../Components/BookingCard/BookingCard";
 import BookingOfferCard from "../Components/BookingofferCard/BookingOfferCard";
 import MyBookingcard from "../Components/MyBookingCard/MyBookingcard";
+import AppDownload from "../Components/AppDownload/AppDownload";
+import Footer from "../Components/Footer/Footer";
 
 const MyBookingsPage = ({ bookings, onBooking, hospitals }) => {
   return (
@@ -41,6 +43,8 @@ const MyBookingsPage = ({ bookings, onBooking, hospitals }) => {
           </div>
         </div>
       </div>
+      <AppDownload />
+      <Footer />
     </div>
   );
 };
