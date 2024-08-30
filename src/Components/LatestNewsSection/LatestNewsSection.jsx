@@ -10,56 +10,23 @@ const LatestNewsSection = () => {
         <h1 className="latest-news-heading">Blog & News</h1>
         <h2 className="latest-news-subheading">Read Our Latest News</h2>
         <div className="latest-news-cards">
-          <div className="latest-news-card">
-            <img src={latestNewsImg} alt="stock image" />
-            <div className="latest-news-card-details">
-              <div className="category-and-date">
-                <p>Medical</p>
-                <div className="vertical-dash"></div>
-                <p>March 31, 2022</p>
-              </div>
-              <h1>6 Tips To Protect Your Mental Health When You’re Sick</h1>
-              <div className="author">
-                <img src={author} alt="author" />
-                <p>Rebecca Lee</p>
-              </div>
-            </div>
-          </div>
-          <div className="latest-news-card">
-            {/* TODO: FIX THIS IMAGE TO FILL THE WHOLE CARD */}
-            <img
-              src={latestNewsImg}
-              alt="stock image"
-              className="latest-news-card-img"
-            />
-            <div className="latest-news-card-details">
-              <div className="category-and-date">
-                <p>Medical</p>
-                <div className="vertical-dash"></div>
-                <p>March 31, 2022</p>
-              </div>
-              <h1>6 Tips To Protect Your Mental Health When You’re Sick</h1>
-              <div className="author">
-                <img src={author} alt="author" />
-                <p>Rebecca Lee</p>
+          {[1, 2, 3].map((item) => (
+            <div className="latest-news-card" key={item}>
+              <img src={latestNewsImg} alt="stock image" />
+              <div className="latest-news-card-details">
+                <div className="category-and-date">
+                  <p>Medical</p>
+                  <div className="vertical-dash"></div>
+                  <p>March 31, 2022</p>
+                </div>
+                <h1>6 Tips To Protect Your Mental Health When You’re Sick</h1>
+                <div className="author">
+                  <img src={author} alt="author" />
+                  <p>Rebecca Lee</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="latest-news-card">
-            <img src={latestNewsImg} alt="stock image" />
-            <div className="latest-news-card-details">
-              <div className="category-and-date">
-                <p>Medical</p>
-                <div className="vertical-dash"></div>
-                <p>March 31, 2022</p>
-              </div>
-              <h1>6 Tips To Protect Your Mental Health When You’re Sick</h1>
-              <div className="author">
-                <img src={author} alt="author" />
-                <p>Rebecca Lee</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

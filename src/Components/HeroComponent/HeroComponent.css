@@ -46,8 +46,8 @@
 
 .hero-image {
   position: absolute;
-  top: -20px; /* Adjust the value to move the image down */
-  right: -16px;
+  top: -100px; /* Adjust the value to move the image down */
+  right: -26px;
   width: 100%; /* Ensure the image scales correctly */
 }
 .button-find {

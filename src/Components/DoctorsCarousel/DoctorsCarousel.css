@@ -1,12 +1,10 @@
 .slide {
-  width: 348px;
-  height: 530px;
-  border: 1px solid red;
+  width: max-content;
+  height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.25rem;
 }
 
 .slide-img {
@@ -16,9 +14,13 @@
   overflow: hidden;
   border: 8px solid white;
   box-shadow: 0px 15px 55px -10px #00000017;
+  height: 405px;
+  width: 350px;
 }
 .slide-img > img {
-  transform: translateY(20px);
+  transform: translateY(40px);
+  height: 100%;
+  width: 100%;
 }
 .slide-name {
   font-size: 24px;
@@ -29,11 +31,13 @@
 }
 .slide-specialisation {
   color: var(--primary-color);
+  margin-top: -1rem;
   font-size: 17px;
   font-weight: 500;
   line-height: 27px;
   text-align: center;
 }
 .doctors-carousel {
-  height: 819px;
+  height: max-content;
+  padding: 3rem 0;
 }

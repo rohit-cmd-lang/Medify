@@ -11,8 +11,7 @@ import faqLove from "../../assets/faq-love.png";
 
 const Faq = () => {
   return (
-    // TODO: Fix the bg color if you can
-    <div className="faq">
+    <div className="faq bg-white">
       <div className="faq-container">
         <div className="faq-heading">
           <p

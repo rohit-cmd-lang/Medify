@@ -1,13 +1,13 @@
 import React from "react";
 import "./DoctorsCarousel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
 import doctorHeena from "../../assets/doctor-heena.png";
 import doctorAnkur from "../../assets/doctor-ankur.png";
-import doctorAhmad from "../../assets/doctor-ahmad.png";
-import lesleyHull from "../../assets/lesley-hull.png";
-import doctorStevens from "../../assets/ahmad-stevens.png";
+import doctorAhmad from "../../assets/doctorAhmed.png";
+import lesleyHull from "../../assets/doctorLesley.png";
+import doctorStevens from "../../assets/doctorStevens.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,16 +16,50 @@ const DoctorsCarousel = () => {
   return (
     <div className="doctors-carousel">
       <Swiper
-        modules={[Pagination]}
-        spaceBetween={0}
-        slidesPerView={3.8}
-        centeredSlides={true}
+        modules={[Pagination, Autoplay]}
+        spaceBetween={20}
+        slidesPerView="auto"
+        centeredSlides={false}
         loop={true}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-        pagination={{ clickable: true }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
       >
-        <SwiperSlide>
+        <SwiperSlide style={{ width: "auto" }}>
+          <div className="slide">
+            <div className="slide-img">
+              <img src={doctorAnkur} alt="doctor heena" />
+            </div>
+            <p className="slide-name">Dr. Ankur Sharma</p>
+            <p className="slide-specialisation">Medicine</p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide style={{ width: "auto" }}>
+          <div className="slide">
+            <div className="slide-img">
+              <img src={doctorAhmad} alt="" />
+            </div>
+            <p className="slide-name">Dr. Ahmad Khan</p>
+            <p className="slide-specialisation">Neurologist</p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide style={{ width: "auto" }}>
+          <div className="slide">
+            <div className="slide-img">
+              <img src={lesleyHull} alt="doctor lesley" />
+            </div>
+            <p className="slide-name">Dr. Lesley Hull</p>
+            <p className="slide-specialisation">Oncologist</p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide style={{ width: "auto" }}>
+          <div className="slide">
+            <div className="slide-img">
+              <img src={doctorStevens} alt="" />
+            </div>
+            <p className="slide-name">Dr. Stevens</p>
+            <p className="slide-specialisation">Andrologist</p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide style={{ width: "auto" }}>
           <div className="slide">
             <div className="slide-img">
               <img src={doctorHeena} alt="doctor heena" />
@@ -34,10 +68,6 @@ const DoctorsCarousel = () => {
             <p className="slide-specialisation">Orthopadics</p>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="slide">slide2</SwiperSlide>
-        <SwiperSlide className="slide">slide3</SwiperSlide>
-        <SwiperSlide className="slide">slide4</SwiperSlide>
-        <SwiperSlide className="slide">slide5</SwiperSlide>
       </Swiper>
     </div>
   );

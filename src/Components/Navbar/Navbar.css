@@ -1,3 +1,6 @@
+.navbar-alternate {
+  background-color: white;
+}
 .navbar-wrapper {
   /* change this later */
 
@@ -22,6 +25,10 @@
   cursor: pointer;
 }
 
+.nav-link-active {
+  /* border-bottom: 8px solid var(--primary-color); */
+  color: var(--primary-color);
+}
 .booking-button {
   background-color: var(--primary-color);
   font-weight: 500;

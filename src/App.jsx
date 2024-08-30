@@ -1,33 +1,130 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import "./App.css";
-import HeaderRibbon from "./Components/HeaderRibbon/HeaderRibbon";
-import Navbar from "./Components/Navbar/Navbar";
-import HeroComponent from "./Components/HeroComponent/HeroComponent";
-import SearchComponent from "./Components/SearchComponent/SearchComponent";
-import Faq from "./Components/Faq/Faq";
-import AppDownload from "./Components/AppDownload/AppDownload";
-import Footer from "./Components/Footer/Footer";
-import Specialisation from "./Components/Specialisation/Specialisation";
-import Consultation from "./Components/Consultation/Consultation";
-import StatSection from "./Components/StatSection/StatSection";
-import LatestNewsSection from "./Components/LatestNewsSection/LatestNewsSection";
-import DoctorsCarousel from "./Components/DoctorsCarousel/DoctorsCarousel";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Homepage from "./Pages/Homepage";
+import SearchPage from "./Pages/SearchPage";
+import MyBookingsPage from "./Pages/MyBookingsPage";
 
 function App() {
+  const [states, setStates] = useState([]);
+  const [currentState, setCurrentState] = useState("");
+  const [currentCity, setCurrentCity] = useState("");
+  const [cities, setCities] = useState([]);
+  const [hospitals, setHospitals] = useState([]);
+
+  const [bookings, setBookings] = useState([]);
+
+  const fetchStates = async () => {
+    try {
+      const res = await axios.get(
+        "https://meddata-backend.onrender.com/states"
+      );
+      const data = res.data;
+      setStates(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchCities = async (state) => {
+    try {
+      const res = await axios.get(
+        `https://meddata-backend.onrender.com/cities/${state}`
+      );
+      const data = res.data;
+      setCities(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchHospitals = async (state, city) => {
+    try {
+      const res = await axios.get(
+        `https://meddata-backend.onrender.com/data?state=${state}&city=${city}`
+      );
+      const data = res.data;
+      setHospitals(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // const handleBooking = (hospital, date, slot) => {
+  //   setBookings((prevBookings) => [...prevBookings, { hospital, date, slot }]);
+  // };
+
+  const handleBooking = (hospital, date, slot) => {
+    const newBooking = { hospital, date, slot };
+
+    // Update state
+    setBookings((prevBookings) => {
+      const updatedBookings = [...prevBookings, newBooking];
+
+      // Save to localStorage
+      localStorage.setItem("bookings", JSON.stringify(updatedBookings));
+
+      return updatedBookings;
+    });
+  };
+
+  useEffect(() => {
+    fetchStates();
+  }, []);
+
+  useEffect(() => {
+    const savedBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    setBookings(savedBookings);
+  }, []);
   return (
     <>
-      <HeaderRibbon />
-      <Navbar />
-      <HeroComponent />
-      <SearchComponent />
-      <Specialisation />
-      <Consultation />
-      <LatestNewsSection />
-      <StatSection />
-      <Faq />
-      <AppDownload />
-      <Footer />
+      <Router>
+        <div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Homepage
+                  states={states}
+                  fetchCities={fetchCities}
+                  currentState={currentState}
+                  setCurrentState={setCurrentState}
+                  cities={cities}
+                  setCurrentCity={setCurrentCity}
+                  currentCity={currentCity}
+                  fetchHospitals={fetchHospitals}
+                />
+              }
+            />
+            <Route
+              path="/search"
+              element={
+                <SearchPage
+                  hospitals={hospitals}
+                  states={states}
+                  fetchCities={fetchCities}
+                  currentState={currentState}
+                  setCurrentState={setCurrentState}
+                  cities={cities}
+                  setCurrentCity={setCurrentCity}
+                  currentCity={currentCity}
+                  fetchHospitals={fetchHospitals}
+                  onBooking={handleBooking}
+                />
+              }
+            />
+            <Route
+              path="/bookings"
+              element={
+                <MyBookingsPage bookings={bookings} onBooking={handleBooking} />
+              }
+            />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }
