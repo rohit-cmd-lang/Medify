@@ -4,7 +4,7 @@ import drugstoreImg from "../../assets/Drugstore.png";
 const Specialisation = () => {
   return (
     <div className="specialisation">
-      <div className="specialisation-container">
+      <div className="specialisation-container mt-36 py-10">
         <h1 className="specialisation-heading">Find By Specialisation</h1>
         <div className="specialisation-cards">
           <div className="specialisation-card">
